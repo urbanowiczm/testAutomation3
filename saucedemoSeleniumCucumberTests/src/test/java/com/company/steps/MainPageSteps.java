@@ -1,5 +1,6 @@
 package com.company.steps;
 
+import com.company.pages.InventoryPage;
 import com.company.utils.DriverSingleton;
 import com.company.pages.MainPage;
 import io.cucumber.java.After;
@@ -19,9 +20,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class MainPageSteps {
     private MainPage mainPage;
+    private InventoryPage inventoryPage;
 
     public MainPageSteps() {
         mainPage = new MainPage();
+        inventoryPage = new InventoryPage();
     }
 
     @Before
@@ -57,5 +60,6 @@ public class MainPageSteps {
 
     @Then("The user should login successfully and is brought to the inventory page")
     public void theUserShouldLoginSuccessfullyAndIsBroughtToTheInventoryPage() {
+        assertTrue(inventoryPage.browserIsOnThePage());
     }
 }
