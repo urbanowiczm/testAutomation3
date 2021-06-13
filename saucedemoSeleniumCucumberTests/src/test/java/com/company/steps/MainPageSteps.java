@@ -27,27 +27,6 @@ public class MainPageSteps {
         inventoryPage = new InventoryPage();
     }
 
-    @Before
-    public void setUp(Scenario scenario) {
-    }
-
-    @After
-    public void tearDown(Scenario scenario) {
-        if (scenario.isFailed()) {
-            TakesScreenshot scrShot = ((TakesScreenshot) DriverSingleton.getInstance());
-            File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
-            File DestFile = new File("screen.png");
-
-            try {
-                FileUtils.copyFile(SrcFile, DestFile);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-        DriverSingleton.getInstance().quit();
-    }
-
     @Given("Go to the home page")
     public void goToTheHomePage() {
         mainPage.goToPage();
