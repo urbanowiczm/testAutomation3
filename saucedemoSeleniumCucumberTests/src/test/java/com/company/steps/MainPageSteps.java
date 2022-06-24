@@ -27,8 +27,8 @@ public class MainPageSteps {
         mainPage.login(username, password);
     }
 
-    @Then("The user should login successfully and is brought to the inventory page")
-    public void theUserShouldLoginSuccessfullyAndIsBroughtToTheInventoryPage() {
+    @Then("The user should login successfully and is on the inventory page")
+    public void theUserShouldLoginSuccessfullyAndIsOnTheInventoryPage() {
         assertTrue(inventoryPage.browserIsOnThePage());
     }
 }
