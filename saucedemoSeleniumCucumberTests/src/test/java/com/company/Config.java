@@ -4,6 +4,7 @@ import com.company.utils.DriverSingleton;
 import io.cucumber.java.After;
 import io.cucumber.java.Scenario;
 import org.apache.commons.io.FileUtils;
+import org.junit.jupiter.api.AfterAll;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
@@ -24,7 +25,10 @@ public class Config {
                 e.printStackTrace();
             }
         }
+    }
 
+    @AfterAll
+    public void tearDown(){
         DriverSingleton.getInstance().quit();
     }
 }
